@@ -7,7 +7,7 @@
     <meta name="description" content="Portfolio professionnel de Marcel Faya Leno - Développeur Web & Spécialiste IoT/Électronique">
     <meta name="keywords" content="développeur, IoT, électronique, Guinée, Mamou, Arduino, ESP32, HTML, CSS, JavaScript">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
@@ -1569,6 +1569,86 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Visual refresh */
+        :root {
+            --primary: #e85d3f;
+            --primary-dark: #bd3e2b;
+            --primary-light: #f08368;
+            --secondary: #f2b84b;
+            --accent: #2f7d72;
+            --dark: #182522;
+            --dark-2: #38504a;
+            --light: #f3f0e9;
+            --light-2: #e8e4da;
+            --gray: #62706b;
+            --gray-light: #99a39f;
+            --white: #fffdf8;
+            --shadow: 0 10px 30px rgba(24, 37, 34, 0.08);
+            --shadow-lg: 0 18px 45px rgba(24, 37, 34, 0.12);
+            --shadow-xl: 0 24px 60px rgba(24, 37, 34, 0.16);
+            --border-radius: 4px;
+            --border-radius-lg: 8px;
+        }
+
+        [data-theme="dark"] {
+            --light: #17231f;
+            --light-2: #23332e;
+            --white: #1d2b27;
+            --dark: #f3f0e9;
+            --dark-2: #d8e0db;
+            --gray: #aebbb4;
+            --gray-light: #7e9288;
+        }
+
+        * { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, h4, .logo, .footer-logo { font-family: 'Space Grotesk', sans-serif; }
+        h1 { background: none; -webkit-text-fill-color: initial; color: var(--dark); letter-spacing: -1.5px; }
+        h2 { letter-spacing: -0.8px; }
+        h2::after { background: var(--primary); border-radius: 0; height: 3px; }
+        p { font-size: 1rem; }
+        header { background: rgba(255, 253, 248, 0.9); box-shadow: 0 1px 0 rgba(24, 37, 34, 0.1); }
+        [data-theme="dark"] header { background: rgba(23, 35, 31, 0.92); }
+        .logo, .footer-logo { background: none; -webkit-text-fill-color: initial; color: var(--dark); }
+        .nav-links a::after { background: var(--primary); border-radius: 0; }
+        #hero { min-height: 720px; display: flex; align-items: center; padding: 150px 0 100px; background: var(--light); }
+        #hero::before, #hero::after { display: none; }
+        .hero-content { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); gap: 80px; }
+        .hero-text { max-width: 680px; }
+        .hero-text::before { content: 'PORTFOLIO  /  2025'; display: block; color: var(--primary); font-size: .75rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 24px; }
+        .hero-text h1 { font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: .94; margin-bottom: 28px; }
+        .hero-text .highlight { color: var(--primary); background: none; -webkit-text-fill-color: initial; }
+        .hero-text > p:first-of-type { color: var(--dark); font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 8px; }
+        .hero-text > p:nth-of-type(2) { color: var(--gray); }
+        .hero-image::before { width: 330px; height: 400px; border-radius: 4px; background: var(--secondary); opacity: .28; transform: translate(-42%, -44%) rotate(-7deg); }
+        .hero-image img { width: 330px; height: 410px; border-radius: 4px; border: 10px solid var(--white); box-shadow: var(--shadow-xl); transform: rotate(3deg); }
+        .hero-image img:hover { transform: rotate(0) scale(1.02); }
+        .social-icons a { width: 42px; height: 42px; border-radius: 4px; background: transparent; border: 1px solid var(--light-2); color: var(--dark); box-shadow: none; }
+        .social-icons a:hover { background: var(--primary); border-color: var(--primary); }
+        .btn { border-radius: 3px; }
+        .btn-primary { background: var(--primary); box-shadow: 4px 4px 0 var(--dark); }
+        .btn-primary:hover { background: var(--primary-dark); box-shadow: 2px 2px 0 var(--dark); }
+        .btn-secondary { color: var(--dark); border-color: var(--dark); }
+        .btn-secondary:hover { background: var(--dark); }
+        #about, #projects { background: var(--white); }
+        #skills, #experience { background: var(--light); }
+        .stat, .experience-card, .skill-category, .project-card, .timeline-content { border-radius: 4px; box-shadow: none; border: 1px solid var(--light-2); }
+        .stat::before, .experience-card::before, .skill-category::before { background: var(--primary); height: 3px; }
+        .stat:hover, .experience-card:hover, .skill-category:hover, .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .years, .timeline-date, .project-overlay { background: var(--dark); border-radius: 3px; }
+        .project-tag { border-radius: 3px; color: var(--accent); border-color: rgba(47, 125, 114, .2); }
+        .filter-btn { border-radius: 3px; }
+        .filter-btn.active, .filter-btn:hover { background: var(--dark); border-color: var(--dark); }
+        #contact { background: var(--dark); }
+        .contact-item, .contact-form { border-radius: 4px; }
+        footer { background: #101916; }
+        .back-to-top { width: 46px; height: 46px; border-radius: 3px; background: var(--primary); }
+
+        @media (max-width: 992px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { margin: 0 auto; }
+            .hero-btns, .social-icons { justify-content: center; }
+        }
     </style>
 </head>
 <body>
@@ -1604,6 +1684,7 @@
                 <div class="hero-text">
                     <h1>Marcel <span class="highlight">Faya Leno</span></h1>
                     <p>Développeur Web & Spécialiste IoT / Électronique</p>
+                    <p class="hero-qualification">Diplômé en instrumentation et mesures physiques</p>
                     <p>Mamou – Guinée</p>
                     <div class="hero-btns">
                         <a href="#contact" class="btn btn-primary">
@@ -1641,8 +1722,8 @@
             <h2>À propos de moi</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Étudiant en Licence 3 en Instrumentation et Mesures Physiques à l'Institut Supérieur de Technologie de Mamou, je suis passionné par la conception de systèmes intelligents adaptés aux réalités locales.</p>
-                    <p>Je développe des compétences solides en électronique, IoT et développement web pour proposer des solutions innovantes et pratiques qui répondent aux besoins spécifiques de mon environnement.</p>
+                    <p>Diplômé en Instrumentation et Mesures Physiques à l'Institut Supérieur de Technologie de Mamou, je suis passionné par la conception de systèmes intelligents adaptés aux réalités locales.</p>
+                    <p>Je développe des compétences solides en électronique, en instrumentation industrielle, en IoT et en développement web pour proposer des solutions innovantes et pratiques qui répondent aux besoins spécifiques de mon environnement.</p>
                     <p>Mon objectif est de combiner mes connaissances techniques avec une approche centrée sur l'utilisateur pour créer des produits qui améliorent la vie quotidienne.</p>
                     
                     <!-- Nouvelle section pour les expériences détaillées -->
@@ -1687,32 +1768,32 @@
                 <!-- Galerie de photos -->
                 <div class="about-gallery">
                     <div class="gallery-item">
-                        <img src="images/I07.jpg" alt="Travail en électronique">
-                        <div class="gallery-caption">Électronique</div>
+                        <img src="images/I07.jpg" alt="Prototype de système de mesure en laboratoire">
+                        <div class="gallery-caption">Instrumentation</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/I.jpg" alt="Développement web">
-                        <div class="gallery-caption">Développement</div>
+                        <img src="images/I.jpg" alt="Équipe du projet D-Clic">
+                        <div class="gallery-caption">Projets numériques</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/IMG_20250304_165504_723@1550371609~2.jpg" alt="Projets IoT">
-                        <div class="gallery-caption">Projets IoT</div>
+                        <img src="images/IMG_20250304_165504_723@1550371609~2.jpg" alt="Travaux pratiques sur un équipement électrique">
+                        <div class="gallery-caption">Automatisme</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/labo.jpg" alt="Environnement de travail">
-                        <div class="gallery-caption">Laboratoire</div>
+                        <img src="images/labo.jpg" alt="Équipement industriel étudié en laboratoire">
+                        <div class="gallery-caption">Mesures industrielles</div>
                     </div>
                      <div class="gallery-item">
-                        <img src="images/IMG_20231206_140954_245.jpg" alt="Environnement de travail">
-                        <div class="gallery-caption">Laboratoire</div>
+                        <img src="images/IMG_20231206_140954_245.jpg" alt="Participation à un événement étudiant">
+                        <div class="gallery-caption">Engagement étudiant</div>
                     </div>
                      <div class="gallery-item">
-                        <img src="images/IMG_20231207_151044_147.jpg" alt="Environnement de travail">
-                        <div class="gallery-caption">Laboratoire</div>
+                        <img src="images/IMG_20231207_151044_147.jpg" alt="Présentation d'un projet avec une équipe">
+                        <div class="gallery-caption">Travail en équipe</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images/IMG_20231207_153013_200.jpg" alt="Environnement de travail">
-                        <div class="gallery-caption">Laboratoire</div>
+                        <img src="images/IMG_20231207_153013_200.jpg" alt="Présentation technique lors d'un forum étudiant">
+                        <div class="gallery-caption">Présentation technique</div>
                     </div>
                     
                 </div>
@@ -1773,8 +1854,8 @@
                     <ul class="skill-list">
                         <li><i class="fas fa-check"></i><span>HTML5 & CSS3</span></li>
                         <li><i class="fas fa-check"></i><span>JavaScript (ES6+)</span></li>
-                        <li><i class="fas fa-check"></i><span>Nod.js</span></li>
-                        <li><i class="fas fa-check"></i><span>Reacte</span></li>
+                        <li><i class="fas fa-check"></i><span>Node.js</span></li>
+                        <li><i class="fas fa-check"></i><span>React</span></li>
                         <li><i class="fas fa-check"></i><span>Responsive Design</span></li>
                         <li><i class="fas fa-check"></i><span>UI/UX Design</span></li>
                         <li><i class="fas fa-check"></i><span>Git & GitHub</span></li>
@@ -1787,10 +1868,33 @@
                         <li><i class="fas fa-check"></i><span>Arduino</span></li>
                         <li><i class="fas fa-check"></i><span>ESP32</span></li>
                         <li><i class="fas fa-check"></i><span>Language C</span></li>
-                        <li><i class="fas fa-check"></i><span>Automate programable</span></li>
+                        <li><i class="fas fa-check"></i><span>Automates programmables</span></li>
                         <li><i class="fas fa-check"></i><span>Capteurs & Actionneurs</span></li>
                         <li><i class="fas fa-check"></i><span>Conception de circuits</span></li>
                         <li><i class="fas fa-check"></i><span>Programmation embarquée</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-gauge-high"></i> Instrumentation & Mesures</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i><span>Métrologie et mesures physiques</span></li>
+                        <li><i class="fas fa-check"></i><span>Instrumentation industrielle</span></li>
+                        <li><i class="fas fa-check"></i><span>Capteurs et acquisition de données</span></li>
+                        <li><i class="fas fa-check"></i><span>Mesures électriques</span></li>
+                        <li><i class="fas fa-check"></i><span>Diagnostic et maintenance</span></li>
+                        <li><i class="fas fa-check"></i><span>Automatisme industriel</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-people-group"></i> Collaboration & Projets</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i><span>Travail en équipe</span></li>
+                        <li><i class="fas fa-check"></i><span>Coordination d'activités</span></li>
+                        <li><i class="fas fa-check"></i><span>Présentation de projets</span></li>
+                        <li><i class="fas fa-check"></i><span>Résolution de problèmes</span></li>
+                        <li><i class="fas fa-check"></i><span>Gestion associative</span></li>
                     </ul>
                 </div>
                 
@@ -1800,9 +1904,9 @@
                         <li><i class="fas fa-check"></i><span>Visual Studio Code</span></li>
                         <li><i class="fas fa-check"></i><span>Proteus</span></li>
                         <li><i class="fas fa-check"></i><span>MATLAB</span></li>
-                        <li><i class="fas fa-check"></i><span>AutoCard</span></li>
-                        <li><i class="fas fa-check"></i><span>PsiM</span></li>
-                        <li><i class="fas fa-check"></i><span>CadsiM</span></li>
+                        <li><i class="fas fa-check"></i><span>AutoCAD</span></li>
+                        <li><i class="fas fa-check"></i><span>PSIM</span></li>
+                        <li><i class="fas fa-check"></i><span>CADe_SIMU</span></li>
                         <li><i class="fas fa-check"></i><span>Figma</span></li>
                         <li><i class="fas fa-check"></i><span>Gamma</span></li>
                         <li><i class="fas fa-check"></i><span>Office 365</span></li>
